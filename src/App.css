@@ -1,0 +1,23 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home{
+  display: flex;
+  padding:20px;
+  margin:10px;
+  background:linear-gradient(to bottom, rgb(85, 85, 194),rgb(63, 212, 63),rgb(230, 108, 108)) ;
+}
+
+.homer{
+  padding:20px 10px;
+  border:2px solid red;
+  margin:3px 10px;
+  background-color: aqua;
+}
+
+.home{
+  background-color: blue;
+}
