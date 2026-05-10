@@ -3,13 +3,13 @@ import { useState } from 'react'
 import '../component/nav.css'
 
 
-const App =({navlist})=>{
+const App =({navlist,logoText})=>{
     const[name,setName]=useState(0)
 
     return(
         <>
         <div className='navbar'>
-            <div className='logo'><span>Raas' Garment</span></div>
+            <div className='logo'><span>{logoText}</span></div>
             <ul>
                   {navlist.map((e)=>{
                    return <li key={e}><a href='#'>{e}</a></li>
