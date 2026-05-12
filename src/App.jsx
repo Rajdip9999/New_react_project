@@ -31,11 +31,12 @@ const App = () => {
       <div className="homeMain">
         <Navbar navlist={Navlist} logoText="weplay Friends list" />
 
-        <Routes>
-          <Route path ="home" element = {<Home/>}/>
-          <Route path = "Contact" element = {<Footer/>}/>
-          <Route path = 'raaz' element={<Cou/>}/>
-        </Routes>
+<Routes>
+  <Route path="/" element={<Home/>}/>
+  <Route path="home" element={<Home/>}/>
+  <Route path="Contact" element={<Footer/>}/>
+  <Route path="raaz" element={<Cou/>}/>
+</Routes>
 
         {/* <div className="home">
           <div className="homer">
