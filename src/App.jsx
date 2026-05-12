@@ -33,9 +33,9 @@ const App = () => {
 
 <Routes>
   <Route path="/" element={<Home/>}/>
-  <Route path="/home" element={<Home/>}/>
-  <Route path="/Contact" element={<Footer/>}/>
-  <Route path="/raaz" element={<Cou/>}/>
+  <Route path="home" element={<Home/>}/>
+  <Route path="Contact" element={<Footer/>}/>
+  <Route path="raaz" element={<Cou/>}/>
 </Routes>
 
         {/* <div className="home">
