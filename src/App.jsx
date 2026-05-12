@@ -3,6 +3,7 @@ import Navbar from '../component/nav.jsx'
 import Footer from '../component/footer.jsx'
 import Home from '../component/home.jsx'
 import { Routes, Route, Link } from "react-router-dom"
+import Cou from '../component/raaz.jsx'
 import './App.css'
 
 
@@ -28,11 +29,12 @@ const App = () => {
   return (
     <>
       <div className="homeMain">
-        <Navbar navlist={Navlist} logoText="Raaz's Website" />
+        <Navbar navlist={Navlist} logoText="weplay Friends list" />
 
         <Routes>
           <Route path ="/home" element = {<Home/>}/>
           <Route path = "/Contact" element = {<Footer/>}/>
+          <Route path = '/raaz' element={<Cou/>}/>
         </Routes>
 
         {/* <div className="home">
