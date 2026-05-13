@@ -69,7 +69,7 @@ const App = () => {
             <form onSubmit={raaz}>
 
                 <input
-                    type='text'
+                    type='number'
                     placeholder='input your wpid'
                     required
                     value={wpid}
