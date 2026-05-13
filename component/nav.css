@@ -29,11 +29,14 @@
     font-size: 1.5rem;
 }
 
+
 .logo{
     font-weight:bold;
     color:white;
     font-size: 20px;
 }
+
+
 
 
 @media only screen and (max-width:532px){

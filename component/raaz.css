@@ -1,55 +1,100 @@
-*{
-    margin:0;
-    padding:0,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
-@media only screen and (max-width:532px){
+@media only screen and (max-width:532px) {
 
-.maindiv{
-    text-align: center;
-}
+    .maindiv {
+        text-align: center;
+    }
 
-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 37vh;
-    border: 2px solid black;
-    flex-direction: column;
-    gap: 35px;
-    background: linear-gradient(219deg, #2196F3, #08828f00)
-}
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 97vw;
+        height: 191px;
+        border: 2px solid black;
+        flex-direction: column;
+        gap: 35px;
+        background: linear-gradient(219deg, #2196F3, #08828f00);
+        overflow: hidden;
 
-form input{
-    padding: 30px;
-    text-align: center;
-    font-size: 20px;
-}
+    }
 
-.btn{
-    padding: 13px;
-    background: #4343d3;
-    color: white;
-    font-weight: bold;
-    font-size: large;
-}
+    .firstdiv{
+        animation: firstheader 1s ease-in both ;
+        transition: all 1s ease-in-out both;
+    }
 
-.infodiv{
-    padding: 10px;
-    text-align: center;
-    background-color: #2196F3;
-    border: 2px solid red;
-    color: bisque;
-    font-size: 1.5rem;
-}
+    @keyframes firstheader {
+        from{
+            transform: rotate(4deg);
+        }
 
-.info{
-    border: 2px solid #59ff59;
-    padding: 18px;
-    margin: 11px;
+        to{
+            transform: rotate(12deg);
+        }
+    }
 
-}
+
+
+    form input {
+        padding: 20px;
+        text-align: center;
+        font-size: 20px;
+        border-radius: 25px;
+    }
+
+
+    .btn {
+        padding: 13px;
+        background: #4343d3;
+        color: white;
+        font-weight: bold;
+        font-size: large;
+        border-radius: 18px;
+    }
+
+    .infodiv {
+        padding: 10px;
+        margin: 14px;
+        text-align: center;
+        background-color: #2196F3;
+        border: 2px solid red;
+        color: bisque;
+        font-size: 1.5rem;
+    }
+
+    .info {
+        border: 2px solid #59ff59;
+        padding: 18px;
+        margin: 11px;
+
+    }
+
+    .fromdiv {
+        padding: 5px;
+    }
+
+    .infodiv{
+        animation: raaz 0.6s ease-in;
+    }
+
+    @keyframes raaz {
+        from{
+            
+            transform: translate(10px);
+            opacity: 0;
+        }
+
+        to{
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
 
 }
