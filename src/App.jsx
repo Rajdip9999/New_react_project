@@ -7,7 +7,7 @@ import Cou from '../component/raaz.jsx'
 import './App.css'
 
 
-const App = () => {
+const App = () => { 
   let Navlist = ["Home", "About", 'Join', 'Welcome']
   let secondNav = ['Thanks', 'Home', 'back']
   const Action = async () => {

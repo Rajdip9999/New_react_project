@@ -5,7 +5,7 @@ import './raaz.css'
 const App = () => {
 
     const [wpid, setWpid] = useState("")
-    const [userdata, setUserdata] = useState(null)
+    const [userdata, setUserdata] = useState()
 
     const raaz = async (e) => {
 
@@ -24,6 +24,10 @@ const App = () => {
 
             setUserdata(raazdata)
 
+            if(raazdata !== null){
+
+            localStorage.setItem('info',JSON.stringify(raazdata))
+            }
         }
 
 
@@ -35,10 +39,16 @@ const App = () => {
     }
 
     useEffect(()=>{
-        setTimeout(() => {
-            document.title="Please enter weplay id on Input"
-        }, 5000);
-    },[])
+        const data = localStorage.getItem('info')
+
+        if(data){
+
+        const convt = JSON.parse(data)
+
+        setWpid(convt.weplayid)
+
+        }
+    },[userdata])
 
 
 
@@ -53,6 +63,8 @@ const App = () => {
             }
 
             </div>
+
+
 
             <form onSubmit={raaz}>
 
@@ -75,8 +87,10 @@ const App = () => {
             </form>
 
 
-            {userdata && (
-                <div className='infodiv'>
+            {userdata===null? (<h1>You Are Not My Friend</h1>)
+
+               : userdata?
+               ( <div className='infodiv'>
                     <div className='info'>
                     <p>My weplay id is {userdata?.weplayid}</p>
                     </div>
@@ -108,7 +122,7 @@ const App = () => {
                     <p>My Family name is {userdata?.family}</p>
                     </div>
                 </div>
-            )}
+            ):null}
 
         </>
 
