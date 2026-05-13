@@ -16,7 +16,7 @@
         align-items: center;
         justify-content: center;
         width: 97vw;
-        height: 191px;
+        height: 209px;
         border: 2px solid black;
         flex-direction: column;
         gap: 35px;
@@ -56,7 +56,7 @@
         color: white;
         font-weight: bold;
         font-size: large;
-        border-radius: 18px;
+        border-radius: 15px;
     }
 
     .infodiv {
@@ -64,13 +64,13 @@
         margin: 14px;
         text-align: center;
         background-color: #2196F3;
-        border: 2px solid red;
+        border: 2px solid #2784ab;
         color: bisque;
         font-size: 1.5rem;
     }
 
     .info {
-        border: 2px solid #59ff59;
+        border: 2px solid #010c01;
         padding: 18px;
         margin: 11px;
 
@@ -95,6 +95,13 @@
             opacity: 1;
             transform: scale(1);
         }
+    }
+
+    .maindiv{
+        padding: 10px;
+        background-color: #2196F3;
+        height: 50px;
+        color:white;
     }
 
 }
