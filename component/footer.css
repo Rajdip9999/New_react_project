@@ -71,7 +71,10 @@
 
     .footer{
         flex-direction: column;
+gap:20px;
     }
+
+
 
     .right{
                 width: 90vw;
