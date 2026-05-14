@@ -43,7 +43,7 @@
     .navbar{
         flex-direction: column;
             width: 100vw;
-padding:30px;
+height: 70px;
     }
 
     .navbar ul{
