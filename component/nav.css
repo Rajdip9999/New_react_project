@@ -4,7 +4,6 @@
 }
 
 .navbar{
-padding:30px;
     display: flex;
     background:linear-gradient(to right,blue,green);
     height: 50px;
@@ -43,7 +42,8 @@ padding:30px;
 @media only screen and (max-width:532px){
     .navbar{
         flex-direction: column;
-            width: 100vw;;
+            width: 100vw;
+padding:30px;
     }
 
     .navbar ul{
