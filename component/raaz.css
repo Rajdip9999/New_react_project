@@ -17,6 +17,7 @@
         justify-content: center;
         width: 97vw;
         height: 209px;
+        box-shadow: 20px 17px 20px 4px rgb(1 194 255 / 20%);
         border: 2px solid black;
         flex-direction: column;
         gap: 35px;
@@ -27,7 +28,7 @@
 
     .firstdiv{
         animation: firstheader 1s ease-in both ;
-        transition: all 1s ease-in-out both;
+        transition: all 1s ease-in-out;
     }
 
     @keyframes firstheader {
@@ -41,15 +42,13 @@
     }
 
 
-
     form input {
         padding: 20px;
         text-align: center;
         font-size: 20px;
         border-radius: 25px;
     }
-
-
+    
     .btn {
         padding: 13px;
         background: #4343d3;
@@ -57,7 +56,14 @@
         font-weight: bold;
         font-size: large;
         border-radius: 15px;
+        transition: 0.3s;
+        cursor: pointer;
     }
+
+    .btn:hover{
+    transform: scale(1.05);
+    background: #2d2db3;
+}
 
     .infodiv {
         padding: 10px;
@@ -67,9 +73,11 @@
         border: 2px solid #2784ab;
         color: bisque;
         font-size: 1.5rem;
+        transition: all 1s ease-in-out;
     }
 
     .info {
+
         border: 2px solid #010c01;
         padding: 18px;
         margin: 11px;
@@ -81,27 +89,43 @@
     }
 
     .infodiv{
+
         animation: raaz 0.6s ease-in;
+
     }
 
     @keyframes raaz {
         from{
             
-            transform: translate(10px);
+            transform: translateY(10px);
             opacity: 0;
+
         }
 
         to{
+
             opacity: 1;
-            transform: scale(1);
+           transform: translateY(0);
+
         }
     }
 
+    .info{
+        animation: raaz 1s ease-in;
+    }
+
+
     .maindiv{
+
         padding: 10px;
         background-color: #2196F3;
         height: 50px;
         color:white;
+
+    }
+
+    .loadingstate{
+        animation: raaz 1s ease-in-out both;
     }
 
 }

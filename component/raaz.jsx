@@ -81,7 +81,7 @@ const App = () => {
 
         const interval = setInterval(() => {
 
-            setTypingText(fullText.slice(0, index + 1))
+            setTypingText(fullText.substring(0, index + 1))
 
             index++
 
