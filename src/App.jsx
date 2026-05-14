@@ -3,10 +3,12 @@ import Navbar from '../component/nav.jsx'
 import Footer from '../component/footer.jsx'
 import Home from '../component/home.jsx'
 import { Routes, Route, Link } from "react-router-dom"
+
+import {useEffect} from 'react'
 import Cou from '../component/raaz.jsx'
 import './App.css'
 
-
+useEffect(()=>{
 const App = () => { 
   let Navlist = ["Home", "About", 'Join', 'Welcome']
   let secondNav = ['Thanks', 'Home', 'back']
@@ -25,6 +27,8 @@ const App = () => {
     }
 
   }
+
+},[])
 
   return (
     <>
