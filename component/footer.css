@@ -51,7 +51,7 @@
 }
 
 .rightImg img{
-    width: 300vw;
+    width: 300px;
     height: 306px;
     border-radius: 10px;
 }
@@ -61,7 +61,7 @@
 }
 
 .leftImg img{
-width: 300px;
+    width: 300px;
     height: 306px;
     border-radius: 10px;
 }
@@ -74,10 +74,10 @@ width: 300px;
     }
 
     .right{
-                width: 376px;
+                width: 376vw;
     }
 
     .left{
-        width: 376px;
+        width: 376vw;
     }
 }
