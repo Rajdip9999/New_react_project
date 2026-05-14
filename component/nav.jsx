@@ -11,9 +11,8 @@ const App =({navlist,logoText})=>{
         <div className='navbar'>
             <div className='logo'><span>{logoText}</span></div>
             <ul>
-                  {navlist.map((e)=>{
-                   return <li key={e}><a href='/'>{e}</a></li>
-                })}
+                 <li><a href='/'>Home</a></li>
+                 <li><a href='/contact'>Footer</a></li>
             </ul>
         </div>
         
