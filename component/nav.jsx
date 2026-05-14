@@ -12,7 +12,7 @@ const App =({navlist,logoText})=>{
             <div className='logo'><span>{logoText}</span></div>
             <ul>
                   {navlist.map((e)=>{
-                   return <li key={e}><a href='#'>{e}</a></li>
+                   return <li key={e}><a href='/'>{e}</a></li>
                 })}
             </ul>
         </div>

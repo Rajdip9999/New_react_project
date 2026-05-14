@@ -1,6 +1,4 @@
 import React from "react";
-import Modi from '../public/modi.png'
-import Mamata from '../public/mamata.png'
 import './footer.css'
 
 
@@ -10,14 +8,14 @@ const App = () => {
             <div className="footer">
                 <div className="left">
                     <div className="leftImg">
-                        <img src={Modi} alt="norendra"></img>
+                        <img src="/modi.png" alt="norendra"></img>
                     </div>
                     <h1>Narendra Modi</h1>
                     <p>Prime Minister of India</p>
                 </div>
                 <div className="right">
                     <div className="rightImg">
-                        <img src={Mamata} alt="Mamta"></img>
+                        <img src="mamata.png" alt="Mamta"></img>
                     </div>
                     <h1>Mamata Banerjee</h1>
                     <p> EX- Chief Minister of West Bengal
