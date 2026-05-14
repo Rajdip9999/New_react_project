@@ -4,6 +4,7 @@
 }
 
 .navbar{
+padding:7px;
     display: flex;
     background:linear-gradient(to right,blue,green);
     height: 50px;
