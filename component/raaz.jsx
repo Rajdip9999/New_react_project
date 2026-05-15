@@ -55,7 +55,7 @@ const App = () => {
     // Typing Animation
     useEffect(() => {
 
-cont navbar= document.querySelector(".navbar")
+const navbar= document.querySelector(".navbar")
 
 setTypingText("")
 
