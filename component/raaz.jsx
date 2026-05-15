@@ -106,6 +106,7 @@ alert("User Not Found")
 
             <div className='maindiv'>
 
+
                 <h1>{typingText}</h1>
 
             </div>
