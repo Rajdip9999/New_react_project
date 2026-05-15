@@ -71,7 +71,7 @@ const App = () => {
 
         else {
 
-            fullText = `Welcome {userdata?.name}`
+            fullText = `Welcome ${userdata?.name}`
 
         }
 
