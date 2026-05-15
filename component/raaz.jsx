@@ -55,6 +55,8 @@ const App = () => {
     // Typing Animation
     useEffect(() => {
 
+cont navbar= document.querySelector(".navbar")
+
 setTypingText("")
 
         let fullText = "Searching Your Profile..."
@@ -75,6 +77,10 @@ alert("User Not Found")
         else {
 
             fullText = `Welcome ${userdata?.name}`
+
+if(userdata?.name){
+navbar.classList.add('fixe')
+}
 
         }
 
