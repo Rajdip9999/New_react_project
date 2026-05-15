@@ -55,6 +55,8 @@ const App = () => {
     // Typing Animation
     useEffect(() => {
 
+setTypingText("")
+
         let fullText = "Searching Your Profile..."
 
         if (userdata === null) {
