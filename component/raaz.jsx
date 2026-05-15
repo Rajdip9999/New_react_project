@@ -55,23 +55,23 @@ const App = () => {
     // Typing Animation
     useEffect(() => {
 
-        let fullText = ""
+        let fullText = "Searching Your Profile..."
 
         if (userdata === null) {
 
-            fullText = "You Are Not My Friend"
+            fullText = "User Not Found"
 
         }
 
         else if (!userdata) {
 
-            fullText = "Please enter Wpid"
+            fullText = "Enter Your WePlay ID"
 
         }
 
         else {
 
-            fullText = `My Name Is ${userdata?.name}`
+            fullText = `Welcome {userdata?.name}`
 
         }
 
@@ -138,43 +138,43 @@ const App = () => {
                 <div className='infodiv'>
 
                     <div className='info'>
-                        <p>My weplay id is {userdata?.weplayid}</p>
+                        <p>Weplay Id {userdata?.weplayid}</p>
                     </div>
 
                     <div className='info'>
-                        <p>My Charms is {userdata?.charm}</p>
+                        <p>Charms {userdata?.charm}</p>
                     </div>
 
                     <div className='info'>
-                        <p>My Signature is {userdata?.signature}</p>
+                        <p>Signature is {userdata?.signature}</p>
                     </div>
 
                     <div className='info'>
-                        <p>My bff Number is {userdata?.bff}</p>
+                        <p>BFF Number {userdata?.bff}</p>
                     </div>
 
                     <div className='info'>
-                        <p>My gifts is {userdata?.gift}</p>
+                        <p>Total gifts {userdata?.gift}</p>
                     </div>
 
                     <div className='info'>
-                        <p>My moments is {userdata?.moments}</p>
+                        <p>Total moments {userdata?.moments}</p>
                     </div>
 
                     <div className='info'>
-                        <p>My star is {userdata?.star}</p>
+                        <p>Total Star {userdata?.star}</p>
                     </div>
 
                     <div className='info'>
-                        <p>Time is {userdata?.time}</p>
+                        <p>Time {userdata?.time}</p>
                     </div>
 
                     <div className='info'>
-                        <p>Date is {userdata?.date}</p>
+                        <p>Date {userdata?.date}</p>
                     </div>
 
                     <div className='info'>
-                        <p>My Family name is {userdata?.family}</p>
+                        <p>Family Name {userdata?.family}</p>
                     </div>
 
                 </div>
