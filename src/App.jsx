@@ -8,10 +8,12 @@ import {useEffect} from 'react'
 import Cou from '../component/raaz.jsx'
 import './App.css'
 
-useEffect(()=>{
+
 const App = () => { 
   let Navlist = ["Home", "About", 'Join', 'Welcome']
   let secondNav = ['Thanks', 'Home', 'back']
+
+useEffect(()=>{
   const Action = async () => {
     const home = document.getElementsByClassName('homer')
 
