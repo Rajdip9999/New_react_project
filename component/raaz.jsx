@@ -62,6 +62,7 @@ setTypingText("")
         if (userdata === null) {
 
             fullText = "User Not Found"
+alert("User Not Found")
 
         }
 
