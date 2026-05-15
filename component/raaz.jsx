@@ -77,11 +77,9 @@ const App = () => {
 
         let index = 0
 
-        setTypingText("")
-
         const interval = setInterval(() => {
 
-            setTypingText(fullText.substring(0, index + 1))
+            setTypingText(fullText.slice(0, index + 1))
 
             index++
 
