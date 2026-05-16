@@ -79,7 +79,11 @@ alert("User Not Found")
             fullText = `Welcome ${userdata?.name}`
 
 if(userdata?.name){
-navbar.classList.add('fixe')
+  navbar.classList.add('fixe')
+}
+
+if(userdata?.message){
+ alert(`${userdata?.message}`)
 }
 
         }
@@ -186,6 +190,7 @@ navbar.classList.add('fixe')
                     <div className='info'>
                         <p>Family Name {userdata?.family}</p>
                     </div>
+                    
 
                 </div>
 
