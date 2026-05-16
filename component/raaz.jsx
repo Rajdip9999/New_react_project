@@ -190,6 +190,14 @@ if(userdata?.message){
                     <div className='info'>
                         <p>Family Name {userdata?.family}</p>
                     </div>
+
+                    {userdata.message?  
+                    
+                    <div className='info'>
+                        <p>{userdata?.message}</p>
+
+
+                    </div>:null}
                     
 
                 </div>
