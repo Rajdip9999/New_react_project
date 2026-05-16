@@ -146,8 +146,17 @@ if(userdata?.message){
             </div>
 
 
+           {userdata?.url ?
+           
+        <div className='logoprofile'>
+            <img src={userdata.url} alt='Profile'></img>
+            <p>{userdata?.name}</p>
+        </div>:null
+        
+        }
 
             {userdata ?
+
 
                 <div className='infodiv'>
 
@@ -194,6 +203,8 @@ if(userdata?.message){
                     {userdata.message?  
                     
                     <div className='info'>
+
+
                         <p>{userdata?.message}</p>
 
 
