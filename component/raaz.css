@@ -11,11 +11,12 @@
         text-align: center;
     }
 
-.fixe{
-position: sticky;
-    top: 55px;
+    .fixe {
+        position: sticky;
+        top: 55px;
+        z-index: 1;
 
-}
+    }
 
     form {
         display: flex;
@@ -32,18 +33,18 @@ position: sticky;
 
     }
 
-    .firstdiv{
-        animation: firstheader 1s ease-in both ;
+    .firstdiv {
+        animation: firstheader 1s ease-in both;
         transition: all 1s ease-in-out;
     }
 
     @keyframes firstheader {
-        
-        from{
+
+        from {
             transform: rotate(4deg);
         }
 
-        to{
+        to {
             transform: rotate(12deg);
         }
     }
@@ -55,7 +56,7 @@ position: sticky;
         font-size: 20px;
         border-radius: 25px;
     }
-    
+
     .btn {
         padding: 13px;
         background: #4343d3;
@@ -67,10 +68,10 @@ position: sticky;
         cursor: pointer;
     }
 
-    .btn:hover{
-    transform: scale(1.05);
-    background: #2d2db3;
-}
+    .btn:hover {
+        transform: scale(1.05);
+        background: #2d2db3;
+    }
 
     .infodiv {
         padding: 10px;
@@ -95,60 +96,70 @@ position: sticky;
         padding: 5px;
     }
 
-    .infodiv{
+    .infodiv {
 
         animation: raaz 0.6s ease-in;
 
     }
 
     @keyframes raaz {
-        from{
-            
+        from {
+
             transform: translateY(10px);
             opacity: 0;
 
         }
 
-        to{
+        to {
 
             opacity: 1;
-           transform: translateY(0);
+            transform: translateY(0);
 
         }
     }
 
-    .info{
+    .info {
         animation: raaz 1s ease-in;
     }
 
 
-    .maindiv{
-        font-size:15px;
+    .maindiv {
+        font-size: 15px;
         padding: 15px;
         background-color: #2196F3;
         height: 80px;
-        color:white;
+        color: white;
 
     }
 
-    .loadingstate{
+    .loadingstate {
         animation: raaz 1s ease-in-out both;
     }
 
-    .logoprofile img{
-        width: 85px;
+    .logoprofile img {
+        width: 131px;
         border: 2px solid red;
         border-radius: 23px;
+        animation: raaz 1s ease-in-out both;
     }
 
-    .logoprofile{
-        margin: auto 130px;
-        padding: 35px;
+    .logoprofile {
+        margin: auto 7px;
+        padding: 8px;
         text-align: center;
+        animation: raaz 1s ease-in-out both;
+        z-index: 1;
+        background-color: indianred;
     }
 
-    .logoprofile p{
+    .logoprofile p {
         text-align: center;
+        font-weight: bold;
+        background-color: #891414;
+        color: white;
+        opacity: 1;
+        border-radius: 71px;
+        animation: raaz 1s ease-in-out both;
     }
 
 }
