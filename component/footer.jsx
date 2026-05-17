@@ -14,7 +14,7 @@ const App = ({ userInfo }) => {
                             : <img src='/modi.png' alt="norendra"></img>}
                     </div>
                     {userInfo ? <h1>{userInfo?.name}</h1> : <h1>Norendra Modi</h1>}
-                    <p> Harami {userInfo?.name}</p>
+                    <p> Hii {userInfo?.name}</p>
                 </div>
             </div>
         </div>
