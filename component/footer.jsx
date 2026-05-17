@@ -4,22 +4,19 @@ import './footer.css'
 
 const App = ({ userInfo }) => {
 
-    console.log(userInfo.url_profile)
-
     return (
         <div>
             <div className="footer">
                 <div className="left">
                     <div className="leftImg">
                         {userInfo.url ?
-                            <img src={userInfo.url} alt="norendra"></img>
+                            <img src={userInfo.url} alt={userInfo?.name + 'Photo'}></img>
                             : <img src='/modi.png' alt="norendra"></img>}
                     </div>
                     {userInfo ? <h1>{userInfo?.name}</h1> : <h1>Norendra Modi</h1>}
-                    <p>Harami {userInfo?.name}</p>
+                    <p> Harami {userInfo?.name}</p>
                 </div>
             </div>
-
         </div>
     )
 }
