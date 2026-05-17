@@ -141,6 +141,7 @@
         border: 2px solid red;
         border-radius: 23px;
         animation: raaz 1s ease-in-out both;
+        box-shadow: 5px 3px 15px 5px red;
     }
 
     .logoprofile {
