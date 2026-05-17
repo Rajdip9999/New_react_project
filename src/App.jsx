@@ -3,9 +3,7 @@ import { CiSearch } from "react-icons/ci";
 import Footer from '../component/footer'
 import '../component/raaz.css'
 import Navbar from '../component/nav'
-
 const App = () => {
-
     const [wpid, setWpid] = useState("")
     const [userdata, setUserdata] = useState()
     const [typingText, setTypingText] = useState("")
@@ -112,8 +110,9 @@ const App = () => {
 
 
     return (
-
         <>
+
+        
         <Navbar logoText='Weplay Friend List'/>
 
             <div className='maindiv'>

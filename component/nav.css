@@ -1,52 +1,85 @@
 *{
-    margin:0;
-    padding:0;
+    margin:0px;
+    padding: 0px;
 }
+
+@media only screen and (max-width:530px) {
 
 .navbar{
     display: flex;
-    background:linear-gradient(to right,blue,green);
-    height: 50px;
-    align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    background-color: aqua;
+    height: 55px;
     position: sticky;
-    top:0;
-    z-index: 2;
+    top: 0;
+    z-index: 20;
+
+    
 }
 
-.navbar ul{
+.logo{
+    border:3px solid black;
+    color:black;
+    padding:1px 4px;
+    height: 40px;
+    text-align: center;
+    margin:7px;
+    width:100px;
+    font-size: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+
+}
+
+
+.menuBtn{
+    width: 42px;
+    height: 25px;
+    margin-right: 13px;
+    margin-top: 17px;
+    font-size: larger;
+    text-align: center;
+}
+
+.ulList{
+    background: antiquewhite;
     display: flex;
-    gap:40px;
+    flex-direction: column;
+    position: absolute;
+    top: 47px;
+    right: 4px;
+    gap: 36px;
+    width: 81px;
+    align-items: center;
+    height:100px;
+    overflow: hidden;
+    z-index: 3;
+    animation: raaz 0.4s ease-in-out both;
+
 }
 
-.navbar ul li{
+@keyframes raaz {
+    from{
+        opacity: 0;
+        transform: translate(1px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(3px);
+    }
+}
+
+.ulList li{
     list-style: none;
 }
 
-.navbar ul li a{
-    text-decoration:none;
-    color:white;
-    font-size: 1.5rem;
+.ulList li a{
+    text-decoration: none;
 }
 
-
-.logo{
-    font-weight:bold;
-    color:white;
-    font-size: 20px;
+.col{
+    height: 0px;
 }
 
-
-
-
-@media only screen and (max-width:532px){
-    .navbar{
-        flex-direction: column;
-            width: 100vw;
-height: 70px;
-    }
-
-    .navbar ul{
-        gap: 12px;
-    }
 }
