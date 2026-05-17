@@ -55,16 +55,16 @@ const App = () => {
     // Typing Animation
     useEffect(() => {
 
-const navbar= document.querySelector(".maindiv")
+        const navbar = document.querySelector(".maindiv")
 
-setTypingText("")
+        setTypingText("")
 
         let fullText = "Searching Your Profile..."
 
         if (userdata === null) {
 
             fullText = "User Not Found"
-alert("User Not Found")
+            alert("User Not Found")
 
         }
 
@@ -78,13 +78,13 @@ alert("User Not Found")
 
             fullText = `Welcome ${userdata?.name}`
 
-if(userdata?.name){
-  navbar.classList.add('fixe')
-}
+            if (userdata?.name) {
+                navbar.classList.add('fixe')
+            }
 
-if(userdata?.message){
- alert(`${userdata?.message}`)
-}
+            if (userdata?.message) {
+                alert(`${userdata?.message}`)
+            }
 
         }
 
@@ -124,13 +124,23 @@ if(userdata?.message){
             <div className='fromdiv'>
 
                 <form onSubmit={raaz}>
-
                     <input
                         type='number'
-                        placeholder='input your wpid'
+                        placeholder='Please Enter your Wpid'
                         required
                         value={wpid}
                         onChange={(e) => setWpid(e.target.value)}
+
+                        onKeyDown={(e) => {
+
+                            if (e.key === "Tab" && wpid) {
+
+                                navigator.clipboard.writeText(wpid)
+
+                                alert("Copied to Clipboard")
+                            }
+
+                        }}
                     />
 
                     <div className='dtndiv'>
@@ -146,14 +156,14 @@ if(userdata?.message){
             </div>
 
 
-           {userdata?.url ?
-           
-        <div className='logoprofile' url ={userdata.url_profile}>
-            <img src={userdata.url} alt='Profile'></img>
-            <p>{userdata?.name}</p>
-        </div>:null
-        
-        }
+            {userdata?.url ?
+
+                <div className='logoprofile' url={userdata.url_profile}>
+                    <img src={userdata.url} alt='Profile'></img>
+                    <p>{userdata?.name}</p>
+                </div> : null
+
+            }
 
             {userdata ?
 
@@ -200,25 +210,25 @@ if(userdata?.message){
                         <p>Family Name {userdata?.family}</p>
                     </div>
 
-                    {userdata.message?  
-                    
-                    <div className='info'>
+                    {userdata.message ?
+
+                        <div className='info'>
 
 
-                        <p>{userdata?.message}</p>
+                            <p>{userdata?.message}</p>
 
 
-                    </div>:null}
-                    
+                        </div> : null}
+
 
                 </div>
 
                 : null}
 
-                {userdata? 
-                
-                <Footer userInfo = {userdata}/>:null
-            
+            {userdata ?
+
+                <Footer userInfo={userdata} /> : null
+
             }
         </>
 
