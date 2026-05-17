@@ -1,85 +1,230 @@
-import React from "react";
-import Navbar from '../component/nav.jsx'
-import Footer from '../component/footer.jsx'
-import Home from '../component/home.jsx'
-import { Routes, Route, Link } from "react-router-dom"
-import {useEffect} from 'react'
-import Cou from '../component/raaz.jsx'
-import './App.css'
+import React, { useState, useEffect } from 'react'
+import { CiSearch } from "react-icons/ci";
+import Footer from '../component/footer'
+import '../component/raaz.css'
+import Navbar from '../component/nav'
 
+const App = () => {
 
-const App = () => { 
-  let Navlist = ["Home", "About", 'Join', 'Welcome']
-  let secondNav = ['Thanks', 'Home', 'back']
+    const [wpid, setWpid] = useState("")
+    const [userdata, setUserdata] = useState()
+    const [typingText, setTypingText] = useState("")
 
-/*useEffect(()=>{
-  const Action = async () => {
-    const home = document.getElementsByClassName('homer')
+    const raaz = async (e) => {
 
-    //   const h1 = home[0].querySelector('h1')
-    //   const p = home[0].querySelector('p')
-    for (let ff of home) {
-      ff.querySelector('h1').innerText = 'Raaz'
-      ff.querySelector('p').innerText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quisquam'
-      ff.style.backgroundColor = 'red'
-      ff.style.fontWeight = 'bold'
-      ff.style.color = 'white'
-      ff.style.width = '300px'
+        e.preventDefault()
+
+        try {
+
+            const urldata = await fetch(
+                `https://server-backend-1-1nf0.onrender.com/?wpid=${wpid}`
+            )
+
+            const raazdata = await urldata.json()
+
+            setUserdata(raazdata)
+
+            if (raazdata !== null) {
+                localStorage.setItem('info', JSON.stringify(raazdata))
+            }
+
+        }
+
+        catch (err) {
+            console.log(err.message)
+        }
+
     }
 
-  }
 
-},[])*/
+    // LocalStorage Data
+    useEffect(() => {
 
-  return (
-    <>
-      <div className="homeMain">
-        <Navbar navlist={Navlist} logoText="weplay Friends list" />
+        const data = localStorage.getItem('info')
 
-<Routes>
-  <Route path="/" element={<Cou/>}/>
-  <Route path="home" element={<Home/>}/>
-  <Route path="Contact" element={<Footer/>}/>
-</Routes>
+        if (data) {
 
-        {/* <div className="home">
-          <div className="homer">
-            <h1>This is site</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quisquam, pariatur distinctio neque necessitatibus molestiae similique natus consectetur deleniti iure ad nostrum qui?</p>
-            <button onClick={Action}>Click</button>
-          </div>
+            const convt = JSON.parse(data)
 
-          <div className="homer">
-            <h1>This is site</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quisquam, pariatur distinctio neque necessitatibus molestiae similique natus consectetur deleniti iure ad nostrum qui?</p>
-          </div>
+            setWpid(convt.weplayid)
+        }
 
-          <div className="homer">
-            <h1>This is site</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quisquam, pariatur distinctio neque necessitatibus molestiae similique natus consectetur deleniti iure ad nostrum qui?</p>
-          </div>
+    }, [])
 
-        </div> */}
 
-        {/* <div className="home">
 
-          <div className="homer">
-            <h1>This is site</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quisquam, pariatur distinctio neque necessitatibus molestiae similique natus consectetur deleniti iure ad nostrum qui?</p>
-          </div>
-          <div className="homer">
-            <h1>This is site</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quisquam, pariatur distinctio neque necessitatibus molestiae similique natus consectetur deleniti iure ad nostrum qui?</p>
-          </div>
-          <div className="homer">
-            <h1>This is site</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quisquam, pariatur distinctio neque necessitatibus molestiae similique natus consectetur deleniti iure ad nostrum qui?</p>
-          </div>
-        </div> */}
-      </div>
+    // Typing Animation
+    useEffect(() => {
 
-    </>
-  )
+        const navbar = document.querySelector(".maindiv")
+
+        setTypingText("")
+
+        let fullText = "Searching Your Profile..."
+
+        if (userdata === null) {
+
+            fullText = "User Not Found"
+            alert("User Not Found")
+
+        }
+
+        else if (!userdata) {
+
+            fullText = "Enter Your WePlay ID"
+
+        }
+
+        else {
+
+            fullText = `Welcome ${userdata?.name}`
+
+            if (userdata?.name) {
+                navbar.classList.add('fixe')
+            }
+
+            if (userdata?.message) {
+                alert(`${userdata?.message}`)
+            }
+
+        }
+
+        let index = 0
+
+        const interval = setInterval(() => {
+
+            setTypingText(fullText.slice(0, index + 1))
+
+            index++
+
+            if (index === fullText.length) {
+
+                clearInterval(interval)
+
+            }
+
+        }, 100)
+
+        return () => clearInterval(interval)
+
+    }, [userdata])
+
+
+
+    return (
+
+        <>
+        <Navbar logoText='Weplay Friend List'/>
+
+            <div className='maindiv'>
+
+
+                <h1>{typingText}</h1>
+
+            </div>
+
+            <div className='fromdiv'>
+
+                <form onSubmit={raaz}>
+                    <input
+                        type='number'
+                        placeholder='Please Enter your Wpid'
+                        required
+                        value={wpid}
+                        onChange={(e) => setWpid(e.target.value)}
+                    />
+
+                    <div className='dtndiv'>
+
+                        <button type='submit' className='btn'>
+                            Search <CiSearch />
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            {userdata?.url ?
+
+                <div className='logoprofile' url={userdata.url_profile}>
+                    <img src={userdata.url} alt='Profile'></img>
+                    <p>{userdata?.name}</p>
+                </div> : null
+
+            }
+
+            {userdata ?
+
+
+                <div className='infodiv'>
+
+                    <div className='info'>
+                        <p>Weplay Id {userdata?.weplayid}</p>
+                    </div>
+
+                    <div className='info'>
+                        <p>Charms {userdata?.charm}</p>
+                    </div>
+
+                    <div className='info'>
+                        <p>Signature is {userdata?.signature}</p>
+                    </div>
+
+                    <div className='info'>
+                        <p>BFF Number {userdata?.bff}</p>
+                    </div>
+
+                    <div className='info'>
+                        <p>Total gifts {userdata?.gift}</p>
+                    </div>
+
+                    <div className='info'>
+                        <p>Total moments {userdata?.moments}</p>
+                    </div>
+
+                    <div className='info'>
+                        <p>Total Star {userdata?.star}</p>
+                    </div>
+
+                    <div className='info'>
+                        <p>Time {userdata?.time}</p>
+                    </div>
+
+                    <div className='info'>
+                        <p>Date {userdata?.date}</p>
+                    </div>
+
+                    <div className='info'>
+                        <p>Family Name {userdata?.family}</p>
+                    </div>
+
+                    {userdata.message ?
+
+                        <div className='info'>
+
+
+                            <p>{userdata?.message}</p>
+
+
+                        </div> : null}
+
+
+                </div>
+
+                : null}
+
+            {userdata ?
+
+                <Footer userInfo={userdata} /> : null
+
+            }
+        </>
+
+    )
+
 }
 
 export default App
