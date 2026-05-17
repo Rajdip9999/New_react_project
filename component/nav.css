@@ -33,12 +33,15 @@
 
 
 .menuBtn{
-    width: 42px;
-    height: 25px;
-    margin-right: 13px;
-    margin-top: 17px;
-    font-size: larger;
-    text-align: center;
+        width: 49px;
+        height: 42px;
+        margin-right: 13px;
+        margin-top: 17px;
+        font-size: 32px;
+        text-align: center;
+        background: #03A9F4;
+        border: none;
+        cursor: pointer;
 }
 
 .ulList{
