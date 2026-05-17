@@ -151,6 +151,7 @@
         animation: raaz 1s ease-in-out both;
         z-index: 1;
         background-color: indianred;
+        box-shadow: 9px 7px 15px red;
     }
 
     .logoprofile p {

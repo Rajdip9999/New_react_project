@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { CiSearch } from "react-icons/ci";
-
+import Footer from '../component/footer'
 import './raaz.css'
 
 const App = () => {
@@ -148,7 +148,7 @@ if(userdata?.message){
 
            {userdata?.url ?
            
-        <div className='logoprofile'>
+        <div className='logoprofile' url ={userdata.url_profile}>
             <img src={userdata.url} alt='Profile'></img>
             <p>{userdata?.name}</p>
         </div>:null
@@ -215,6 +215,11 @@ if(userdata?.message){
 
                 : null}
 
+                {userdata? 
+                
+                <Footer userInfo = {userdata}/>:null
+            
+            }
         </>
 
     )

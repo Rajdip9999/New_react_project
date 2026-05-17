@@ -2,15 +2,20 @@ import React from "react";
 import './footer.css'
 
 
-const App = () => {
+const App = ({userInfo}) => {
+
+    console.log(userInfo.url_profile)
+
     return (
         <div>
             <div className="footer">
                 <div className="left">
                     <div className="leftImg">
-                        <img src="/modi.png" alt="norendra"></img>
+                        {userInfo.url?
+                        <img src={userInfo.url} alt="norendra"></img>
+                        :<img src='/modi.png' alt="norendra"></img>}
                     </div>
-                    <h1>Narendra Modi</h1>
+                   {userInfo? <h1>{userInfo?.name}</h1>:<h1>Norendra Modi</h1>}
                     <p>Prime Minister of India</p>
                 </div>
                 <div className="right">
