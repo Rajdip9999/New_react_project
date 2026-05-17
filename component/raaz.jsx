@@ -130,17 +130,6 @@ const App = () => {
                         required
                         value={wpid}
                         onChange={(e) => setWpid(e.target.value)}
-
-                        onKeyDown={(e) => {
-
-                            if (e.key === "Tab" && wpid) {
-
-                                navigator.clipboard.writeText(wpid)
-
-                                alert("Copied to Clipboard")
-                            }
-
-                        }}
                     />
 
                     <div className='dtndiv'>
