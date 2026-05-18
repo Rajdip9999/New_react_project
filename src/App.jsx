@@ -3,6 +3,7 @@ import { CiSearch } from "react-icons/ci";
 import Footer from '../component/footer'
 import '../component/raaz.css'
 import Navbar from '../component/nav'
+import {Routes,Route} from 'react-router-dom'
 const App = () => {
     const [wpid, setWpid] = useState("")
     const [userdata, setUserdata] = useState()
@@ -111,6 +112,10 @@ const App = () => {
 
     return (
         <>
+
+        {/* <Routes>
+            <Route path ='/home' element={<Footer/>} />
+        </Routes> */}
 
         
         <Navbar logoText='Weplay Friend List'/>
